@@ -13,11 +13,10 @@ document.addEventListener('DOMContentLoaded', () => {
         // Pega os valores dos campos do formulário
         const name = document.getElementById('form-name').value;
         const phone = document.getElementById('form-phone').value;
-        const whatsapp = document.getElementById('form-whatsapp').value; // Novo campo
+        const whatsapp = document.getElementById('form-whatsapp').value;
         const message = document.getElementById('form-message').value;
 
         // Monta a mensagem formatada
-        // Adiciona o número do WhatsApp do cliente à mensagem apenas se ele for preenchido
         let whatsappMessage = `Olá! Gostaria de fazer um contato.
 
 *Nome:* ${name}
@@ -48,7 +47,7 @@ ${message}
     // --- Animação de "fade-in" para elementos ---
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            if (entry.isIntersecting) {
+            if (entry.isInteracting) {
                 entry.target.classList.add('visible');
                 observer.unobserve(entry.target);
             }
