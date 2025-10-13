@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const message = document.getElementById('form-message').value;
 
         // Monta a mensagem formatada
-        const whatsappMessage = `Olá! Gostaria de fazer um contato.
+        const whatsappMessage = `Olá! Gostaria de fazer uma consulta.
 
 *Nome:* ${name}
 *Telefone:* ${phone}
@@ -52,4 +52,5 @@ ${message}
 
     const elementsToAnimate = document.querySelectorAll('.fade-in');
     elementsToAnimate.forEach(el => observer.observe(el));
+
 });
