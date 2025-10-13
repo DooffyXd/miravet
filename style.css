@@ -65,11 +65,18 @@ header nav a::after {
 }
 header nav a:hover::after, header nav a.active::after { width: 100%; }
 
-/* 3. SEÇÃO INÍCIO (HERO) */
+/* 3. SEÇÃO INÍCIO (HERO) - ATUALIZAÇÃO AQUI */
 #inicio {
     padding: 80px 0;
     text-align: center;
 }
+
+/* NOVA REGRA: Limita a largura do container da imagem principal */
+.hero-content {
+    max-width: 900px; /* Define a largura máxima. Ajuste se quiser mais largo ou mais estreito */
+    margin: 0 auto; /* Centraliza o container na página */
+}
+
 .hero-content h1 {
     font-family: var(--heading-font);
     font-size: 60px;
@@ -83,11 +90,9 @@ header nav a:hover::after, header nav a.active::after { width: 100%; }
     margin-bottom: 60px;
 }
 .hero-content img {
+    /* REGRA SIMPLIFICADA: A imagem agora ocupará 100% do seu novo container de 900px */
     max-width: 100%;
-    width: 100%; /* Garante que a imagem ocupe o espaço */
-    max-height: 80vh; /* ATUALIZAÇÃO: Limita a altura máxima da imagem */
-    object-fit: cover; /* ATUALIZAÇÃO: Garante que a imagem preencha o espaço sem distorcer */
-    object-position: center; /* ATUALIZAÇÃO: Centraliza a imagem no recorte */
+    height: auto; 
 }
 
 /* 4. ESTILOS DE SEÇÃO PADRÃO */
@@ -150,8 +155,8 @@ section {
 }
 .about-images img {
     width: 100%;
-    height: 300px; /* ATUALIZAÇÃO: Altura fixa para as imagens */
-    object-fit: cover; /* ATUALIZAÇÃO: Garante que preencham o espaço sem distorcer */
+    height: 300px;
+    object-fit: cover;
 }
 
 /* 6. SEÇÃO SERVIÇOS */
@@ -231,8 +236,8 @@ section {
 }
 .gallery-grid img {
     width: 100%;
-    height: 280px; /* ATUALIZAÇÃO: Altura fixa para as imagens da galeria */
-    object-fit: cover; /* ATUALIZAÇÃO: Preenche o espaço sem distorcer */
+    height: 280px;
+    object-fit: cover;
 }
 
 /* 9. RODAPÉ */
