@@ -1,0 +1,271 @@
+/* 1. VARIÁVEIS E ESTILOS GERAIS */
+:root {
+    --heading-font: 'Cormorant Garamond', serif;
+    --body-font: 'Lato', sans-serif;
+    --text-color: #333;
+    --border-color: #ddd;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--body-font);
+    color: var(--text-color);
+    background-color: #fff;
+}
+
+.container {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 2. CABEÇALHO (HEADER) */
+header {
+    width: 100%;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: #000;
+    color: #fff;
+}
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header nav { display: flex; align-items: center; }
+.nav-left { justify-content: flex-start; flex: 1; }
+.nav-right { justify-content: flex-end; flex: 1; }
+.logo-link { margin: 0 30px; }
+
+/* ESTILOS PARA SUA NOVA IMAGEM DE LOGO */
+.site-logo {
+    width: 60px; /* Ajuste o tamanho conforme preferir */
+    height: auto; /* Mantém a proporção */
+    vertical-align: middle; /* Ajuda a alinhar o logo */
+}
+
+header nav a {
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin: 0 20px;
+    padding-bottom: 5px;
+    position: relative;
+}
+header nav a::after {
+    content: ''; position: absolute; bottom: 0; left: 0;
+    width: 0%; height: 1px; background-color: #fff; transition: width 0.3s ease;
+}
+header nav a:hover::after, header nav a.active::after { width: 100%; }
+
+/* 3. SEÇÃO INÍCIO (HERO) */
+#inicio {
+    padding: 80px 0;
+    text-align: center;
+}
+.hero-content h1 {
+    font-family: var(--heading-font);
+    font-size: 60px;
+    font-weight: 400;
+    color: #000;
+}
+.hero-content .subtitle {
+    font-size: 18px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 60px;
+}
+.hero-content img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* 4. ESTILOS DE SEÇÃO PADRÃO */
+section {
+    padding: 80px 0;
+    border-bottom: 1px solid #eee;
+}
+.section-title {
+    font-family: var(--heading-font);
+    font-size: 32px;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 60px;
+    position: relative;
+    padding-bottom: 15px;
+}
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 1px;
+    background-color: var(--border-color);
+}
+
+/* 5. SEÇÃO SOBRE */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: flex-start;
+}
+.about-text p {
+    margin-bottom: 20px;
+    line-height: 1.7;
+}
+.about-text ul {
+    list-style: none;
+    margin-bottom: 20px;
+}
+.about-text ul li {
+    padding-left: 20px;
+    position: relative;
+    margin-bottom: 10px;
+}
+.about-text ul li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: #000;
+}
+.about-images {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.about-images img {
+    width: 100%;
+    height: auto;
+}
+
+/* 6. SEÇÃO SERVIÇOS */
+.services-container {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+.service-item img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+.service-item h3 {
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+/* 7. SEÇÃO CONTATO */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: flex-start;
+}
+.contact-details p {
+    margin-bottom: 20px;
+}
+.contact-phone {
+    font-size: 22px;
+    font-weight: 700;
+}
+.social-icons a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    margin-right: 10px;
+    text-decoration: none;
+    color: #000;
+}
+.contact-form .form-row {
+    display: flex;
+    gap: 20px;
+}
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid var(--border-color);
+    font-family: var(--body-font);
+    font-size: 14px;
+}
+.contact-form button {
+    width: 100%;
+    padding: 15px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+
+/* 8. SEÇÃO GALERIA */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+.gallery-grid img {
+    width: 100%;
+    height: auto;
+}
+
+/* 9. RODAPÉ */
+footer {
+    text-align: center;
+    padding: 40px 0;
+    font-size: 14px;
+    color: #888;
+}
+
+/* 10. ANIMAÇÕES E RESPONSIVIDADE */
+.fade-in {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+.fade-in.visible {
+    opacity: 1;
+}
+
+@media (max-width: 992px) {
+    header nav { display: none; }
+    /* Ajuste para o logo centralizado em telas menores */
+    .logo-link { 
+        position: relative; /* Remove absolute positioning */
+        transform: none; /* Remove transform */
+        display: block; /* Garante que ocupe seu próprio espaço */
+        text-align: center; /* Centraliza a imagem do logo */
+        margin: 0 auto; /* Centraliza o elemento .logo-link */
+    }
+    .about-grid, .contact-grid { grid-template-columns: 1fr; }
+    .about-images { margin-top: 40px; }
+}
+
+@media (max-width: 768px) {
+    .hero-content h1 { font-size: 40px; }
+    .services-container { flex-direction: column; align-items: center; gap: 40px; }
+    .contact-form .form-row { flex-direction: column; gap: 0; }
+}
