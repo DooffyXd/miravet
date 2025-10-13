@@ -43,14 +43,11 @@ header nav { display: flex; align-items: center; }
 .nav-left { justify-content: flex-start; flex: 1; }
 .nav-right { justify-content: flex-end; flex: 1; }
 .logo-link { margin: 0 30px; }
-
-/* ESTILOS PARA SUA NOVA IMAGEM DE LOGO */
 .site-logo {
-    width: 60px; /* Ajuste o tamanho conforme preferir */
-    height: auto; /* Mantém a proporção */
-    vertical-align: middle; /* Ajuda a alinhar o logo */
+    width: 60px;
+    height: auto;
+    vertical-align: middle;
 }
-
 header nav a {
     color: #fff;
     text-decoration: none;
@@ -87,7 +84,10 @@ header nav a:hover::after, header nav a.active::after { width: 100%; }
 }
 .hero-content img {
     max-width: 100%;
-    height: auto;
+    width: 100%; /* Garante que a imagem ocupe o espaço */
+    max-height: 80vh; /* ATUALIZAÇÃO: Limita a altura máxima da imagem */
+    object-fit: cover; /* ATUALIZAÇÃO: Garante que a imagem preencha o espaço sem distorcer */
+    object-position: center; /* ATUALIZAÇÃO: Centraliza a imagem no recorte */
 }
 
 /* 4. ESTILOS DE SEÇÃO PADRÃO */
@@ -150,7 +150,8 @@ section {
 }
 .about-images img {
     width: 100%;
-    height: auto;
+    height: 300px; /* ATUALIZAÇÃO: Altura fixa para as imagens */
+    object-fit: cover; /* ATUALIZAÇÃO: Garante que preencham o espaço sem distorcer */
 }
 
 /* 6. SEÇÃO SERVIÇOS */
@@ -230,7 +231,8 @@ section {
 }
 .gallery-grid img {
     width: 100%;
-    height: auto;
+    height: 280px; /* ATUALIZAÇÃO: Altura fixa para as imagens da galeria */
+    object-fit: cover; /* ATUALIZAÇÃO: Preenche o espaço sem distorcer */
 }
 
 /* 9. RODAPÉ */
@@ -252,13 +254,12 @@ footer {
 
 @media (max-width: 992px) {
     header nav { display: none; }
-    /* Ajuste para o logo centralizado em telas menores */
     .logo-link { 
-        position: relative; /* Remove absolute positioning */
-        transform: none; /* Remove transform */
-        display: block; /* Garante que ocupe seu próprio espaço */
-        text-align: center; /* Centraliza a imagem do logo */
-        margin: 0 auto; /* Centraliza o elemento .logo-link */
+        position: relative;
+        transform: none;
+        display: block;
+        text-align: center;
+        margin: 0 auto;
     }
     .about-grid, .contact-grid { grid-template-columns: 1fr; }
     .about-images { margin-top: 40px; }
