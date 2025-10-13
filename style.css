@@ -244,14 +244,8 @@ footer {
     color: #888;
 }
 
-/* 10. ANIMAÇÕES E RESPONSIVIDADE */
-.fade-in {
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-}
-.fade-in.visible {
-    opacity: 1;
-}
+/* 10. ANIMAÇÕES E RESPONSIVIDADE - CÓDIGO PROBLEMÁTICO REMOVIDO */
+/* As classes .fade-in e .visible não são mais necessárias no CSS */
 
 @media (max-width: 992px) {
     header nav { display: none; }
