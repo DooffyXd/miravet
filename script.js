@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // --- NOVA FUNÇÃO: Formulário para WhatsApp ---
+    // --- FUNÇÃO: Formulário para WhatsApp ---
     const contactForm = document.getElementById('whatsapp-form');
     
     // Insira seu número de WhatsApp com código do país (sem + ou 00)
@@ -13,15 +13,22 @@ document.addEventListener('DOMContentLoaded', () => {
         // Pega os valores dos campos do formulário
         const name = document.getElementById('form-name').value;
         const phone = document.getElementById('form-phone').value;
-        const email = document.getElementById('form-email').value;
+        const whatsapp = document.getElementById('form-whatsapp').value; // Novo campo
         const message = document.getElementById('form-message').value;
 
         // Monta a mensagem formatada
-        const whatsappMessage = `Olá! Gostaria de fazer uma consulta.
+        // Adiciona o número do WhatsApp do cliente à mensagem apenas se ele for preenchido
+        let whatsappMessage = `Olá! Gostaria de fazer um contato.
 
 *Nome:* ${name}
-*Telefone:* ${phone}
-*E-mail:* ${email}
+*Telefone:* ${phone}`;
+
+        if (whatsapp) {
+            whatsappMessage += `
+*WhatsApp:* ${whatsapp}`;
+        }
+        
+        whatsappMessage += `
 
 *Mensagem:*
 ${message}
@@ -52,5 +59,4 @@ ${message}
 
     const elementsToAnimate = document.querySelectorAll('.fade-in');
     elementsToAnimate.forEach(el => observer.observe(el));
-
 });
