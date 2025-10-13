@@ -175,31 +175,12 @@ section {
     margin-bottom: 10px;
 }
 
-/* 7. SEÇÃO CONTATO */
-.contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: flex-start;
-}
-.contact-details p {
-    margin-bottom: 20px;
-}
-.contact-phone {
-    font-size: 22px;
-    font-weight: 700;
-}
-.social-icons a {
-    display: inline-block;
-    width: 40px;
-    height: 40px;
-    border: 1px solid var(--border-color);
-    border-radius: 50%;
-    text-align: center;
-    line-height: 40px;
-    margin-right: 10px;
-    text-decoration: none;
-    color: #000;
+/* 7. SEÇÃO CONTATO - ATUALIZADO */
+/* As regras para .contact-grid e .contact-details foram removidas */
+
+.contact-form {
+    max-width: 700px; /* Define uma largura máxima para o formulário */
+    margin: 0 auto; /* Centraliza o formulário na página */
 }
 .contact-form .form-row {
     display: flex;
@@ -244,9 +225,7 @@ footer {
     color: #888;
 }
 
-/* 10. ANIMAÇÕES E RESPONSIVIDADE - CÓDIGO PROBLEMÁTICO REMOVIDO */
-/* As classes .fade-in e .visible não são mais necessárias no CSS */
-
+/* 10. RESPONSIVIDADE */
 @media (max-width: 992px) {
     header nav { display: none; }
     .logo-link { 
@@ -256,7 +235,7 @@ footer {
         text-align: center;
         margin: 0 auto;
     }
-    .about-grid, .contact-grid { grid-template-columns: 1fr; }
+    .about-grid { grid-template-columns: 1fr; }
     .about-images { margin-top: 40px; }
 }
 
